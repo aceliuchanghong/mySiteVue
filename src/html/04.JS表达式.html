@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>04.JS表达式</title>
+</head>
+<body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+    <p>{{ number + 1 }}</p>
+    <p>{{ok?'it\'s ok':'not'}}</p>
+    <p :id="'list-'+id">qaq</p>
+    <p>{{ user.name }}</p>
+</div>
+
+<script>
+    const vm = {
+        data: function () {
+            return {
+                number: 9,
+                ok: true,
+                id: '3',
+                user:{
+                    name: 'll'
+                }
+            }
+        }
+    }
+    const QAQ = Vue.createApp(vm).mount('#app')
+
+</script>
+</body>
+</html>

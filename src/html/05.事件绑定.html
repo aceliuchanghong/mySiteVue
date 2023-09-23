@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>05.事件绑定</title>
+</head>
+<body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+    <h3>count is:{{ count }} </h3>
+    <button @click="count+=1">First Increment one</button>
+    <button v-on:click="increment">Second Increment one</button>
+</div>
+
+<script>
+    const vm = {
+        data: function() {
+            return {
+                count: 0,
+            }
+        },// data对应属性
+        methods: {
+            increment() {
+                this.count += 1
+            }
+        }
+    }
+    const QAQ = Vue.createApp(vm).mount('#app')
+
+</script>
+</body>
+</html>

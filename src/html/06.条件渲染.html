@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>06.条件渲染</title>
+</head>
+<body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<div id="app">
+    <button @click="flag= !flag">颠倒1,是否显示</button>
+    <p v-if="flag">请求成功(v-if 控制)</p>
+    <p v-show="!flag">请求成功(v-show 控制)</p>
+    <button @click="change">颠倒2</button>
+</div>
+
+<script>
+    const vm = {
+        data: function() {
+            return {
+                flag: false
+            }
+        },
+        methods: {
+            change() {
+                this.flag = !this.flag
+            }
+        }
+    }
+    const QAQ = Vue.createApp(vm).mount('#app')
+
+</script>
+</body>
+</html>

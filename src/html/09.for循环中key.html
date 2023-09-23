@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>09.for循环中key</title>
+</head>
+<body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+<div id="app">
+
+    <div>
+        <input type="text" v-model="name">
+        <button @click="addNewUser">添加</button>
+    </div>
+
+    <ul>
+        <li v-for="(user,index) in userList" :key="user.id">
+            <input type="checkbox" />
+            索引是:{{ index }}, 姓名是:{{ user.name }}
+        </li>
+    </ul>
+
+</div>
+
+<script>
+    const vm = {
+        data: function () {
+            return {
+                userList: [
+                    {id: 1, name: 'liu'},
+                    {id: 2, name: 'li'},
+                    {id: 3, name: 'l'},
+                    {id: 40, name: 'zzliu'},
+                ],
+                name: '',
+                nextId: 4
+            }
+        },
+        methods: {
+            addNewUser() {
+                this.userList.unshift({id: this.nextId, name: this.name}) // unshift 起始位置
+                this.name = ''
+                this.nextId++
+            }
+        }
+    }
+    const QAQ = Vue.createApp(vm).mount('#app')
+
+</script>
+</body>
+</html>

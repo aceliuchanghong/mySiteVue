@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>02.内容渲染</title>
+</head>
+<body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+    <p>姓名:{{ username }}</p>
+    <p>年龄:{{ age }}</p>
+
+    <p>{{ desc }}</p>  <!-- 原样显示 -->
+    <p v-html="desc"></p> <!-- 会被转义 -->
+</div>
+
+<script>
+    const vm = {
+        data: function () {
+            return {
+                username: 'lch',
+                age: 25,
+                desc: '<a href="http://www.baidu.com">百度一下</a>'
+            }
+        }
+    }
+    const QAQ = Vue.createApp(vm).mount('#app')
+
+</script>
+</body>
+</html>

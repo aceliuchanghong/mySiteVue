@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>03.属性绑定</title>
+</head>
+<body>
+<script src="https://unpkg.com/vue@3/dist/vue.global.js"></script>
+
+<div id="app">
+    <a :href="link">传递的链接</a> <!--渲染属性需要加冒号 和 v-bind一样,冒号代表其省略了 -->
+    <input type="text" :placeholder="inputValue"> <!-- -->
+    <img :src="imgSrc" :style="{width:w}" alt=""> <!-- -->
+</div>
+
+<script>
+    const vm = {
+        data: function () {
+            return {
+                link: "https://cn.vuejs.org/guide/essentials/application.html#mounting-the-app",
+                inputValue: '请输入',
+                imgSrc: '../assets/logo.png',
+                w: '500px'
+            }
+        }
+    }
+    const QAQ = Vue.createApp(vm).mount('#app')
+
+</script>
+</body>
+</html>
