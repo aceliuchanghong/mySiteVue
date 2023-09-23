@@ -2,27 +2,28 @@
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
   <HelloWorld msg="Welcome to Your Vue.js App.."/>
-  <TestX msg="QAQ"/>
+  <TestX msg="QAQ,,0"/>
+  <Test2X></Test2X>
 </template>
 
 <!--帮我引入 ./components/TestX.vue 到这个文件 -->
 
 <script>
 import HelloWorld from './components/HelloWorld.vue'
-// import TestX from './components/TestX.vue'
-
+import TestX from './components/TestX.vue'
+import Test2X from './components/Test2X.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld
+    HelloWorld,
+    TestX,
+    Test2X
   }
 }
 
-
-
-
 </script>
+
 
 <style>
 #app {
