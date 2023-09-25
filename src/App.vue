@@ -4,6 +4,12 @@
   <Test2X></Test2X>
   <TextAreaTest></TextAreaTest>
   <ProgressBar></ProgressBar>
+  <ul>
+    <li v-for="(user,index) in userList" :key="user.id">
+      <input type="checkbox" />
+      索引是:{{ index }}, 姓名是:{{ user.name }}
+    </li>
+  </ul>
 </template>
 
 <script>
@@ -11,6 +17,8 @@ import TestX from './components/TestX.vue'
 import Test2X from './components/Test2X.vue'
 import TextAreaTest from './components/TextAreaTest.vue'
 import ProgressBar from './components/ProgressBar.vue'
+import axios from "axios";
+
 
 export default {
   name: 'App',
@@ -18,7 +26,23 @@ export default {
     TestX,
     Test2X,
     TextAreaTest,
-    ProgressBar
+    ProgressBar,
+  },
+  created: function () {
+    axios.get("http://localhost:8888/userapi/AllUser").then(response => {
+      console.log(response)
+      console.log(response.data)
+      this.userList=response.data
+    }),
+        console.log("created")
+  },
+  mounted: function () {
+    console.log("mounted") //渲染
+  },
+  data: function () {
+    return {
+      userList: []
+    }
   }
 }
 
