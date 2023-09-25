@@ -17,7 +17,6 @@ import TestX from './components/TestX.vue'
 import Test2X from './components/Test2X.vue'
 import TextAreaTest from './components/TextAreaTest.vue'
 import ProgressBar from './components/ProgressBar.vue'
-import axios from "axios";
 
 
 export default {
@@ -29,11 +28,11 @@ export default {
     ProgressBar,
   },
   created: function () {
-    axios.get("http://localhost:8888/userapi/AllUser").then(response => {
+    this.$axios.get("/userapi/AllUser").then(response => {
       console.log(response)
       console.log(response.data)
       this.userList=response.data
-    }),
+    })
         console.log("created")
   },
   mounted: function () {
