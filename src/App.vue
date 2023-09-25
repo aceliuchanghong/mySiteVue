@@ -1,24 +1,24 @@
-<!-- https://developer.mozilla.org/zh-CN/docs/Learn/Tools_and_testing/Client-side_JavaScript_frameworks/Vue_getting_started-->
 <template>
   <img alt="Vue logo" src="./assets/logo.png">
-  <HelloWorld msg="Welcome to Your Vue.js App.."/>
   <TestX msg="QAQ,,0"/>
   <Test2X></Test2X>
+  <TextAreaTest></TextAreaTest>
+  <ProgressBar></ProgressBar>
 </template>
 
-<!--帮我引入 ./components/TestX.vue 到这个文件 -->
-
 <script>
-import HelloWorld from './components/HelloWorld.vue'
 import TestX from './components/TestX.vue'
 import Test2X from './components/Test2X.vue'
+import TextAreaTest from './components/TextAreaTest.vue'
+import ProgressBar from './components/ProgressBar.vue'
 
 export default {
   name: 'App',
   components: {
-    HelloWorld,
     TestX,
-    Test2X
+    Test2X,
+    TextAreaTest,
+    ProgressBar
   }
 }
 
