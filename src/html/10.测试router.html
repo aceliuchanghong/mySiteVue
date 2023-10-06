@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试router</title>
+</head>
+<body>
+<script src="https://unpkg.com/vue@3"></script>
+<script src="https://unpkg.com/vue-router@4"></script>
+
+<div id="app">
+    <h1>Hello App!</h1>
+    <p>
+        <router-link to="discover">发现音乐</router-link>
+        <router-link to="my">我的音乐</router-link>
+        <router-link to="friends">关注</router-link>
+        <router-view></router-view>
+    </p>
+    <router-view></router-view>
+</div>
+</body>
+</html>

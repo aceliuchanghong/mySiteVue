@@ -3,7 +3,7 @@
       v-model="textarea"
       :rows="2"
       type="textarea"
-      placeholder="Please input"
+      placeholder="Please input Text"
   />
 </template>
 

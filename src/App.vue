@@ -1,15 +1,22 @@
 <template>
-  <img alt="Vue logo" src="./assets/logo.png">
-  <TestX msg="QAQ,,0"/>
-  <Test2X></Test2X>
-  <TextAreaTest></TextAreaTest>
-  <ProgressBar></ProgressBar>
-  <ul>
-    <li v-for="(user,index) in userList" :key="user.id">
-      <input type="checkbox" />
-      索引是:{{ index }}, 姓名是:{{ user.name }}
-    </li>
-  </ul>
+  <div>
+    <router-link to="/discover">发现音乐</router-link>
+    <router-link to="/my">我的音乐</router-link>
+    <router-link to="/friends">关注</router-link>
+    <router-view></router-view>
+
+    <img alt="Vue logo" src="./assets/logo.png">
+    <TestX msg="QAQ,,0"/>
+    <Test2X></Test2X>
+    <TextAreaTest></TextAreaTest>
+    <ProgressBar></ProgressBar>
+    <ul>
+      <li v-for="(user,index) in userList" :key="user.id">
+        <input type="checkbox"/>
+        索引是:{{ index }}, 姓名是:{{ user.name }}
+      </li>
+    </ul>
+  </div>
 </template>
 
 <script>
@@ -31,9 +38,9 @@ export default {
     this.$axios.get("/userapi/AllUser").then(response => {
       console.log(response)
       console.log(response.data)
-      this.userList=response.data
+      this.userList = response.data
     })
-        console.log("created")
+    console.log("created")
   },
   mounted: function () {
     console.log("mounted") //渲染
