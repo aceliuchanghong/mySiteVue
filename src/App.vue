@@ -1,13 +1,13 @@
 <template>
   <div>
-    <router-link to="/discover">发现音乐</router-link>
+<!--    <router-link to="/discover">发现音乐</router-link>
     <router-link to="/my"> 我的音乐</router-link>
     <router-link to="/friends"> 关注</router-link>
     <router-view></router-view>
 
     <img alt="Vue logo" src="./assets/logo.png">
     <TestX msg="QAQ,,0"/>
-    <Test2X></Test2X>
+
     <TextAreaTest></TextAreaTest>
     <ProgressBar></ProgressBar>
     <ul>
@@ -15,24 +15,27 @@
         <input type="checkbox"/>
         索引是:{{ index }}, 姓名是:{{ user.name }}
       </li>
-    </ul>
+    </ul>-->
+    <Test2X></Test2X>
+
   </div>
 </template>
 
 <script>
-import TestX from './components/TestX.vue'
-import Test2X from './components/Test2X.vue'
+/*import TestX from './components/TestX.vue'
 import TextAreaTest from './components/TextAreaTest.vue'
-import ProgressBar from './components/ProgressBar.vue'
-
+import ProgressBar from './components/ProgressBar.vue'*/
+// import LayOut from './components/LayOut.vue'
+import Test2X from './components/Test2X.vue'
 
 export default {
   name: 'App',
   components: {
-    TestX,
-    Test2X,
+    /*TestX,
     TextAreaTest,
-    ProgressBar,
+    ProgressBar,*/
+    Test2X,
+   // LayOut
   },
   created: function () {
     this.$axios.get("/userapi/AllUser").then(response => {
